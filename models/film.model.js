@@ -1,6 +1,8 @@
 const db = require("../utils/db");
 const { FILM_TBL } = require("../config/db.json");
 
+const FULLTEXT_COL = "title";
+
 module.exports = {
   all() {
     return db(FILM_TBL);
