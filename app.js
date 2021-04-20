@@ -15,8 +15,10 @@ app.get("/", function (req, res) {
   });
 });
 
+app.use("/api/auth", require("./routes/auth.route"));
 app.use("/api/films", require("./routes/film.route"));
 app.use("/api/customers", require("./routes/customer.route"));
+app.use("/api/users", require("./routes/user.route"));
 
 app.get("/err", function (req, res) {
   throw new Error("Error!");

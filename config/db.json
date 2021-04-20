@@ -1,4 +1,5 @@
 {
   "CUSTOMER_TBL": "customer",
-  "FILM_TBL": "film"
+  "FILM_TBL": "film",
+  "USER_TBL": "users"
 }
