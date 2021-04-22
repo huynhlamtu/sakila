@@ -27,4 +27,20 @@ module.exports = {
   add(user) {
     return db(USER_TBL).insert(user);
   },
+
+  patchRFToken(id, rfToken) {
+    return db(USER_TBL).where("id", id).update("rfToken", rfToken);
+  },
+
+  async isValidRFToken(id, rfToken) {
+    const list = await db(USER_TBL)
+      .where("id", id)
+      .andWhere("rfToken", rfToken);
+
+    if (list.length > 0) {
+      return true;
+    }
+
+    return false;
+  },
 };

@@ -19,6 +19,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.2",
     "morgan": "^1.10.0",
-    "mysql2": "^2.2.5"
+    "mysql2": "^2.2.5",
+    "randomstring": "^1.1.5"
   }
 }

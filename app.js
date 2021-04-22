@@ -3,6 +3,8 @@ const morgan = require("morgan");
 require("express-async-errors");
 const cors = require("cors");
 
+const auth = require("./middlewares/auth.mdw");
+
 const app = express();
 
 app.use(cors());
@@ -16,9 +18,9 @@ app.get("/", function (req, res) {
 });
 
 app.use("/api/auth", require("./routes/auth.route"));
-app.use("/api/films", require("./routes/film.route"));
+app.use("/api/films", auth, require("./routes/film.route"));
 app.use("/api/customers", require("./routes/customer.route"));
-app.use("/api/users", require("./routes/user.route"));
+app.use("/api/users", auth, require("./routes/user.route"));
 
 app.get("/err", function (req, res) {
   throw new Error("Error!");
